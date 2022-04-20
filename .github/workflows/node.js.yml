@@ -16,10 +16,7 @@ jobs:
     steps: 
       - uses: actions/checkout@v2
       - name: npm install and build
-        run: |
-          npm install
-	  npm audit fix --force
-          npm build
+        run : npm install && npm audit fix && npm build
 		   
   test:
   
@@ -38,10 +35,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: npm install ,and test
-       run:| 
-       
-          npm install
-	  npm audit fix
-          npm test
+      run: npm install && npm audit fix && npm test
       env:
         CI : true
