@@ -15,7 +15,11 @@ jobs:
     steps: 
       - uses: actions/checkout@v2
       - name: npm install and build
-        run: npm install && npm audit fix && npm build		   
+        run: npm install && npm audit fix && npm build	
+      - uses: actions/upload-artifact@master
+        with: 
+          name: webpack artifacts
+          path: public/
   test:
     runs-on: ubuntu-latest 
     
