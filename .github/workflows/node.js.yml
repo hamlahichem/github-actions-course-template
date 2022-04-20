@@ -11,15 +11,12 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
       - name: npm install and build
-        run: npm install && npm audit fix && npm build
-		   
+        run: npm install && npm audit fix && npm build		   
   test:
-  
     runs-on: ubuntu-latest 
     
     strategy:
