@@ -21,7 +21,7 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [12.x ]
         os: [ubuntu-latest, windows-2016]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
@@ -32,6 +32,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: npm install ,and test
-      run: echo npm install && npm audit fix && npm test
+      run: echo install npm, npm audit fix, npm test
       env:
         CI: true
